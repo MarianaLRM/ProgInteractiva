@@ -1,0 +1,69 @@
+#N canvas 367 7 739 651 10;
+#X declare -lib mrpeach;
+#X obj 289 57 metro 250;
+#X obj 287 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 289 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 291 137 5 0 0 0 - - -;
+#X obj 290 113 counter 3;
+#X obj 290 168 select 0 1 2 3;
+#X obj 255 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 287 523 *~ 1;
+#X floatatom 332 508 5 0 250 0 - - -;
+#X obj 280 581 dac~;
+#X floatatom 239 275 5 0 0 0 - - -;
+#X obj 306 224 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 289 277 5 0 0 0 - - -;
+#X obj 359 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 343 275 5 0 0 0 - - -;
+#X obj 417 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 401 273 5 0 0 0 - - -;
+#X msg 700 497 disconnect;
+#X floatatom 283 397 5 0 0 0 - - -;
+#X msg 662 466 connect localhost 12000;
+#X msg 417 416 send /escala \$1;
+#X msg 423 488 send /color \$1;
+#X msg 563 384 send /ancho \$1;
+#X floatatom 563 332 5 0 30 0 - - -;
+#X obj 9 574 import mrpeach;
+#X obj 564 521 udpsend;
+#X obj 563 455 packOSC;
+#X obj 283 457 osc~;
+#X obj 284 426 mtof;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 1 11 0;
+#X connect 5 2 13 0;
+#X connect 5 3 15 0;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 7 0 9 1;
+#X connect 8 0 7 1;
+#X connect 8 0 21 0;
+#X connect 10 0 18 0;
+#X connect 11 0 12 0;
+#X connect 12 0 18 0;
+#X connect 13 0 14 0;
+#X connect 14 0 18 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 25 0;
+#X connect 18 0 20 0;
+#X connect 18 0 28 0;
+#X connect 19 0 25 0;
+#X connect 20 0 26 0;
+#X connect 21 0 26 0;
+#X connect 22 0 26 0;
+#X connect 23 0 22 0;
+#X connect 26 0 25 0;
+#X connect 27 0 7 0;
+#X connect 28 0 27 0;
